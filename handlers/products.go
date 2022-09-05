@@ -176,11 +176,12 @@ func (h *productHandler) UpdateProduct(w http.ResponseWriter, r *http.Request) {
 
 	dataContex := r.Context().Value("dataFile")
 	filepath := dataContex.(string) // add this code
-	request := productsdto.CreateProductRequest{
+	request := productsdto.UpdateProductRequest{
 		Name:  r.FormValue("name"),
 		Price: price,
 		Stock: stock,
 		Desc:  r.FormValue("desc"),
+		Image: filepath,
 	}
 
 	validation := validator.New()
