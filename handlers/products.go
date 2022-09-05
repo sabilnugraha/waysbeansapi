@@ -218,7 +218,7 @@ func (h *productHandler) UpdateProduct(w http.ResponseWriter, r *http.Request) {
 	product.Image = resp.SecureURL
 
 	if filepath != "false" {
-		product.Image = filepath
+		product.Image = resp.SecureURL
 	}
 
 	data, err := h.ProductRepository.UpdateProduct(product)
