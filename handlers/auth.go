@@ -130,6 +130,7 @@ func (h *handlerAuth) Login(w http.ResponseWriter, r *http.Request) {
 		City:     user.City,
 		Image:    user.Image,
 		Status:   user.Status,
+		ID:       user.ID,
 	}
 
 	w.Header().Set("Content-Type", "application/json")
